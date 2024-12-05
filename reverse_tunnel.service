@@ -1,0 +1,14 @@
+[Unit]
+Description=Network-based SSH Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/saltchicken/access_manager/reverse_tunnel.sh
+Restart=always
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
+
